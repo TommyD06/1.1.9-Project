@@ -1,0 +1,581 @@
+import turtle
+import math
+import time
+  
+  
+# Function to draw rectangle
+def drawRectangle(t, width, height, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    t.forward(width)
+    t.left(90)
+    t.forward(height)
+    t.left(90)
+    t.forward(width)
+    t.left(90)
+    t.forward(height)
+    t.left(90)
+    t.end_fill()
+  
+      
+# Function to draw triangle    
+def drawTriangle(t, length, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    t.forward(length)
+    t.left(135)
+    t.forward(length / math.sqrt(2))
+    t.left(90)
+    t.forward(length / math.sqrt(2))
+    t.left(135)
+    t.end_fill()
+  
+      
+# Set the background color
+screen = turtle.Screen ( )
+screen.bgcolor("skyblue")
+  
+  
+# Creating turtle object
+tip = turtle.Turtle()
+tip.color ("black")
+tip.shape ("arrow")
+tip.speed (0)
+  
+# Make grass floor
+turtle.speed(0)
+# Make floor
+turtle.speed(0)
+turtle.penup()
+turtle.goto(-400, -150)
+turtle.pendown()
+turtle.color("#7CFC00")
+turtle.begin_fill()
+for i in range(2):
+    turtle.forward(800)
+    turtle.right(90)
+    turtle.forward(400)
+    turtle.right(90)
+turtle.end_fill()
+
+# Create hill that snowman is on
+turtle.penup()
+turtle.goto(100, -150)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(30)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(160, -150)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(40)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(130, -150)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(35)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(75, -150)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(25)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(55, -150)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(20)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(180, -150)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(45)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(140, -200)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(60)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(90, -170)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(35)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(40, -190)
+turtle.pendown()
+turtle.fillcolor("#7CFC00")
+turtle.begin_fill()
+turtle.circle(35)
+turtle.end_fill()
+
+
+
+# Tree base
+turtle.speed(0)
+tip.penup()
+tip.goto(-130,-150)
+tip.pendown()
+drawRectangle(tip, 20, 40, "#964B00")
+  
+  
+# Tree top
+tip.penup()
+tip.goto(-165, -120)
+tip.pendown()
+drawTriangle(tip, 90, "green")
+tip.penup()
+tip.goto(-155,-100)
+tip.pendown()
+drawTriangle(tip, 70, "green")
+
+# tree trunk
+tip.penup()
+tip.goto(-20,-150)
+tip.pendown()
+drawRectangle(tip, 20, 40, "#964B00")
+
+# tree top
+tip.penup()
+tip.goto(-55,-120)
+tip.pendown()
+drawTriangle(tip, 90, "green")
+tip.penup()
+tip.goto(-45,-100)
+tip.pendown()
+drawTriangle(tip, 70, "green")
+
+turtle.penup()
+turtle.goto(100,-150)
+turtle.pendown()
+turtle.circle(28)
+
+
+# Bottom of body
+tip.penup()
+tip.goto(100,-100)
+tip.pendown()
+tip.color("white")
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Middle of body
+tip.penup()
+tip.goto(100,-70)
+tip.pendown()
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Head of Snowman
+tip.penup()
+tip.goto(100,-40)
+tip.pendown()
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Function to draw 1 small black circle
+def black_circle():
+    tip.color("black")
+    tip.begin_fill()
+    tip.circle(5)
+    tip.end_fill()
+    
+  
+# Mouth
+tip.penup()
+tip.goto(100,-35)
+tip.pendown()
+tip.color("red")
+tip.begin_fill()
+tip.circle(5)
+tip.end_fill()
+
+tip.penup()
+tip.goto(100,-31)
+tip.pendown()
+tip.color("white")
+tip.begin_fill()
+tip.circle(15)
+tip.end_fill()
+
+
+# Eyes
+x = 0
+for i in range(1):
+    tip.penup()
+    tip.goto(105,-25)
+    tip.pendown()
+    black_circle()
+    x = x + 50
+x = 0
+for i in range(1):
+    tip.penup()
+    tip.goto(95,-25)
+    tip.pendown()
+    black_circle()
+    x = x + 50
+
+# Buttons
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(100,-50)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+    
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(100,-70)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+    
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(100,-90)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+tip.hideturtle()
+
+# create dark cloud
+
+def filled_circle(radius, color):
+    turtle.color(color,color)
+    turtle.begin_fill()
+    turtle.circle(radius)
+    turtle.end_fill()
+
+turtle.penup()
+turtle.goto(-140,100)
+turtle.pendown()
+def cloud(radius, cloud_color="white"):
+    filled_circle(radius,cloud_color)
+    turtle.forward(radius)
+    filled_circle(radius,cloud_color)
+    turtle.right(90)
+    filled_circle(radius,cloud_color)
+    turtle.right(90)
+    filled_circle(radius,cloud_color)
+    turtle.right(90)
+    filled_circle(radius,cloud_color)
+    turtle.right(90)
+
+radius = 50
+
+cloud(radius)
+
+
+
+turtle.penup()
+turtle.goto(-90,100)
+turtle.pendown()
+turtle.shape("circle")
+
+turtle.speed(1)
+turtle.penup()
+turtle.goto(100,-60)
+turtle.pendown()
+
+# explode snowman
+turtle.pensize(90)
+turtle.speed(0)
+turtle.pencolor("red")
+turtle.circle(45)
+turtle.hideturtle()
+tip.clear()
+turtle.clear()
+
+# snowman floating
+time.sleep(1)
+turtle.hideturtle()
+screen.bgcolor("black")
+
+# make sun
+turtle.speed(0)
+turtle.penup()
+turtle.goto(-100, 80)
+turtle.pencolor("#8B0000")
+turtle.pendown()
+turtle.begin_fill()
+turtle.circle(20)
+turtle.end_fill()
+
+# create stars
+
+turtle.penup()
+turtle.goto(-50,0)
+turtle.pencolor("white")
+turtle.pendown()
+turtle.pensize(5)
+turtle.circle(1)
+turtle.end_fill()
+# star 2
+turtle.penup()
+turtle.goto(-110,-150)
+turtle.pencolor("white")
+turtle.pendown()
+turtle.pensize(5)
+turtle.circle(1)
+turtle.end_fill()
+# star 3
+turtle.penup()
+turtle.goto(130,130)
+turtle.pencolor("white")
+turtle.pendown()
+turtle.pensize(5)
+turtle.circle(1)
+turtle.end_fill()
+# star 4
+turtle.penup()
+turtle.goto(-20,70)
+turtle.pencolor("white")
+turtle.pendown()
+turtle.pensize(5)
+turtle.circle(1)
+turtle.end_fill()
+# star 5
+turtle.penup()
+turtle.goto(-10,-90)
+turtle.pencolor("white")
+turtle.pendown()
+turtle.pensize(5)
+turtle.circle(1)
+turtle.end_fill()
+# star 6
+turtle.penup()
+turtle.goto(80,0)
+turtle.pencolor("white")
+turtle.pendown()
+turtle.pensize(5)
+turtle.circle(1)
+turtle.end_fill()
+# Bottom of body
+tip.penup()
+tip.goto(-150,-100)
+tip.pendown()
+tip.color("white")
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Middle of body
+tip.penup()
+tip.goto(50,50)
+tip.pendown()
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Head of Snowman
+tip.penup()
+tip.goto(100,-140)
+tip.pendown()
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Function to draw 1 small black circle
+def black_circle():
+    tip.color("black")
+    tip.begin_fill()
+    tip.circle(5)
+    tip.end_fill()
+    
+  
+# Mouth
+tip.penup()
+tip.goto(100,-135)
+tip.pendown()
+tip.color("red")
+tip.begin_fill()
+tip.circle(5)
+tip.end_fill()
+
+tip.penup()
+tip.goto(100,-131)
+tip.pendown()
+tip.color("white")
+tip.begin_fill()
+tip.circle(15)
+tip.end_fill()
+
+
+# Eyes
+x = 0
+for i in range(1):
+    tip.penup()
+    tip.goto(105,-125)
+    tip.pendown()
+    black_circle()
+    x = x + 50
+x = 0
+for i in range(1):
+    tip.penup()
+    tip.goto(95,-125)
+    tip.pendown()
+    black_circle()
+    x = x + 50
+
+# Buttons
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(50,70)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+    
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(50,50)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+    
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(-150,-90)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+tip.hideturtle()
+    
+# snowman on Mars
+time.sleep(1)
+turtle.clear()
+tip.clear()
+time.sleep(1)
+screen.bgcolor("darkred")
+
+# Bottom of body
+tip.penup()
+tip.goto(0,-60)
+tip.pendown()
+tip.color("white")
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Middle of body
+tip.penup()
+tip.goto(0,-90)
+tip.pendown()
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Head of Snowman
+tip.penup()
+tip.goto(0,-120)
+tip.pendown()
+tip.begin_fill()
+tip.circle(20)
+tip.end_fill()
+
+# Function to draw 1 small black circle
+def black_circle():
+    tip.color("black")
+    tip.begin_fill()
+    tip.circle(5)
+    tip.end_fill()
+    
+  
+# Mouth
+tip.penup()
+tip.goto(0,-55)
+tip.pendown()
+tip.color("red")
+tip.begin_fill()
+tip.circle(5)
+tip.end_fill()
+
+tip.penup()
+tip.goto(0,-51)
+tip.pendown()
+tip.color("white")
+tip.begin_fill()
+tip.circle(15)
+tip.end_fill()
+
+
+# Eyes
+x = 0
+for i in range(1):
+    tip.penup()
+    tip.goto(5,-45)
+    tip.pendown()
+    black_circle()
+    x = x + 50
+x = 0
+for i in range(1):
+    tip.penup()
+    tip.goto(-5,-45)
+    tip.pendown()
+    black_circle()
+    x = x + 50
+
+# Buttons
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(0,-70)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+    
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(0,-90)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+    
+y = 0
+for i in range(4):
+    tip.penup()
+    tip.goto(0,-110)
+    tip.pendown()
+    black_circle()
+    y = y - 10
+tip.hideturtle()
+    
+# text
+turtle.color("black")
+style = ("Arial", 11, "italic")
+turtle.write("Why am I on Mars?! Oh no, I'm melting!", font=style, align="right")
+time.sleep(2)
+tip.clear()
+turtle.clear()
+turtle.hideturtle()
